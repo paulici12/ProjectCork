@@ -54,7 +54,7 @@ var System = /** @class */ (function () {
         this.setupStats();
         this._canvas = document.getElementById("cork_canvas");
         this._gl = this._canvas.getContext("webgl2", {});
-        this._gl.clearColor(0.0, 0.0, 0.0, 1.0);
+        this._gl.clearColor(0.0, 0.0, 0.0, 0.5);
         this._gl.clear(this._gl.COLOR_BUFFER_BIT);
     };
     System.prototype.setupStats = function () {
