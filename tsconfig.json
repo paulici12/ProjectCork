@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "system",
+    "lib": [
+      "es5",
+      "es6",
+      "dom",
+      "es2015.iterable"
+    ],
+    "sourceMap": true,
+    "removeComments": false,
+    "noImplicitAny": false,
+    "noEmitOnError": true,
+    "outFile": "cork.js",
+    "typeRoots": [
+      "./Scripts/typings/"
+    ]
+  },
+  "exclude": [
+    "wwwroot",
+    "node_modules",
+    "node_modules/@types",
+    "Scripts/typings/"
+  ]
+}
