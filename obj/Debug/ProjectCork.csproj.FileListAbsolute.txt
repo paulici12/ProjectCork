@@ -1,6 +1,0 @@
-C:\_code\ProjectCork\bin\ProjectCork.dll.config
-C:\_code\ProjectCork\bin\ProjectCork.dll
-C:\_code\ProjectCork\bin\ProjectCork.pdb
-C:\_code\ProjectCork\obj\Debug\ProjectCork.csprojResolveAssemblyReference.cache
-C:\_code\ProjectCork\obj\Debug\ProjectCork.dll
-C:\_code\ProjectCork\obj\Debug\ProjectCork.pdb
