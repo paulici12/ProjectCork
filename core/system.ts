@@ -1,7 +1,7 @@
 ﻿
-var system: System = null;
+var System: CorkSystem = null;
 
-class System
+class CorkSystem
 {
     private _fpsCounter: FPSCounter = null;
     private _pageScaler: PageScaler = null;
@@ -16,7 +16,7 @@ class System
 
     init()
     {
-        this._render.clear(0.0, 0.0, 0.0, 0.5);
+        System.render().clear(0.0, 0.0, 0.0, 0.5);
     }
 
     public fpsCounter(): FPSCounter
@@ -69,8 +69,8 @@ function renderLoop()
             then = now - (delta % interval);
 
             // ... Code for Drawing the Frame ...
-            system.render().update(delta, then);
-            system.fpsCounter().update();
+            System.render().update(delta, then);
+            System.fpsCounter().update();
         }
     }
 
