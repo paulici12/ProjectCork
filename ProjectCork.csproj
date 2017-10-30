@@ -45,10 +45,13 @@
   <ItemGroup>
     <TypeScriptCompile Include="core\system.ts" />
     <TypeScriptCompile Include="cork.ts" />
+    <TypeScriptCompile Include="render\IRender.ts" />
+    <TypeScriptCompile Include="render\Render.ts" />
     <TypeScriptCompile Include="Scripts\typings\jquery\index.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\stats.js\index.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\webgl2\index.d.ts" />
     <TypeScriptCompile Include="tools\PageScaler.ts" />
+    <TypeScriptCompile Include="tools\FPSCounter.ts" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>

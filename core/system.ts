@@ -3,45 +3,35 @@ var system: System = null;
 
 class System
 {
-    private _canvas: HTMLCanvasElement = null;
-    private _gl: WebGLRenderingContext = null;
-
+    private _fpsCounter: FPSCounter = null;
     private _pageScaler: PageScaler = null;
-    private _stats: Stats = null;
+    private _render: IRender = null;
 
     constructor()
     {
-        this.init();
-    }
-
-    private init()
-    {
+        this._fpsCounter = new FPSCounter("#stats");
         this._pageScaler = new PageScaler("#cork_canvas");
-
-        this.setupStats();
-
-        this._canvas = <HTMLCanvasElement>document.getElementById("cork_canvas");
-
-        this._gl = this._canvas.getContext("webgl", { /*options*/ })
-
-        this._gl.clearColor(0.0, 0.0, 0.0, 0.5);
-        this._gl.clear(this._gl.COLOR_BUFFER_BIT);
-
-        renderLoop();
+        this._render = new Render("cork_canvas");
     }
 
-    private setupStats()
+    init()
     {
-        this._stats = new Stats();
-        $("#stats").append(this._stats.domElement);
+        this._render.clear(0.0, 0.0, 0.0, 0.5);
     }
 
-    public update(delta: number, then: number): void
+    public fpsCounter(): FPSCounter
     {
-        if (this._stats)
-        {
-            this._stats.update();
-        }
+        return this._fpsCounter;
+    }
+
+    public pageScaler(): PageScaler
+    {
+        return this._pageScaler;
+    }
+
+    public render(): IRender
+    {
+        return this._render;
     }
 }
 
@@ -79,7 +69,8 @@ function renderLoop()
             then = now - (delta % interval);
 
             // ... Code for Drawing the Frame ...
-            system.update(delta, then);
+            system.render().update(delta, then);
+            system.fpsCounter().update();
         }
     }
 
