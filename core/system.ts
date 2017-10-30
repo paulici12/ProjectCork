@@ -14,7 +14,7 @@ class CorkSystem
         this._render = new Render("cork_canvas");
     }
 
-    init()
+    init(): void
     {
         System.render().clear(0.0, 0.0, 0.0, 0.5);
     }
@@ -35,7 +35,7 @@ class CorkSystem
     }
 }
 
-function renderLoop()
+function renderLoop(): void
 {
     let fps: number = 60;
     let now: number = 0;
@@ -43,7 +43,7 @@ function renderLoop()
     let interval: number = 1000 / fps;
     let delta: number = 0;
 
-    function draw()
+    function draw(): void
     {
         requestAnimationFrame(draw);
 
