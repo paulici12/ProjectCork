@@ -7,16 +7,30 @@ class CorkSystem
     private _pageScaler: PageScaler = null;
     private _render: IRender = null;
 
+    private _renderExamples: RenderExamples = null;
+
     constructor()
     {
         this._fpsCounter = new FPSCounter("#stats");
         this._pageScaler = new PageScaler("#cork_canvas");
         this._render = new Render("cork_canvas");
+
+        this._renderExamples = new RenderExamples();
+
+
+        //test
+        this.test();
     }
 
     init(): void
     {
-        System.render().clear(0.0, 0.0, 0.0, 0.5);
+        
+    }
+
+    test()
+    {
+        this._render.clear(0.0, 0.0, 0.0, 1);
+        this._renderExamples.test(this._render.gl());
     }
 
     public fpsCounter(): FPSCounter

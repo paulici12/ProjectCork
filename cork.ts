@@ -2,7 +2,8 @@
 $(document).ready(() =>
 {
     System = new CorkSystem();
-    System.init();
 
     renderLoop();
+
+    System.init();
 });
