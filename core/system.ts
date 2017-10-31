@@ -22,7 +22,7 @@ class CorkSystem
         this.test();
     }
 
-    init(): void
+    init()
     {
         
     }
@@ -49,7 +49,7 @@ class CorkSystem
     }
 }
 
-function renderLoop(): void
+function renderLoop()
 {
     let fps: number = 60;
     let now: number = 0;
@@ -57,7 +57,7 @@ function renderLoop(): void
     let interval: number = 1000 / fps;
     let delta: number = 0;
 
-    function draw(): void
+    function draw()
     {
         requestAnimationFrame(draw);
 
