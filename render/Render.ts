@@ -6,7 +6,7 @@ class Render
 
     constructor(canvas: string)
     {
-        this.canvas = <HTMLCanvasElement>document.getElementById(canvas);
+        this.canvas = (document.getElementById(canvas) as HTMLCanvasElement);
         this.gl = this.canvas.getContext("webgl", { /*options*/ });
 
         // If aquiring the webgl context failed, terminate
@@ -33,6 +33,25 @@ class Render
 
     update(delta: number, then: number): void
     {
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    test() 
+    {
+        this.clear(0.0, 0.0, 0.0, 0.5);
 
     }
 }

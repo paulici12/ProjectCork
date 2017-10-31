@@ -6,6 +6,6 @@
 
 #stats 
 {
-    position: absolute;
-    float: left;
+    position: fixed;
+    bottom: 0px;
 }

@@ -16,7 +16,7 @@ class CorkSystem
     {
         renderLoop();
 
-        this.render.clear(0.0, 0.0, 0.0, 1);
+        this.render.test();
     }
 
     getFpsCounter(): FpsCounter
