@@ -6,9 +6,10 @@
       "dom",
       "es2015.iterable"
     ],
+    "target": "es6",
     "noImplicitAny": true,
     "noImplicitThis": true,
-    "strictNullChecks": false,
+    "strictNullChecks": true,
     "baseUrl": "../",
     "typeRoots": [
       "../"

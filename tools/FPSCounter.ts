@@ -1,19 +1,19 @@
 ﻿
-class FPSCounter
+class FpsCounter
 {
-    private _stats: Stats = null;
+    private readonly  stats: Stats;
 
     constructor(container: string)
     {
-        this._stats = new Stats();
-        $(container).append(this._stats.domElement);
+        this.stats = new Stats();
+        $(container).append(this.stats.domElement);
     }
 
-    public update()
+    update()
     {
-        if (this._stats)
+        if (this.stats)
         {
-            this._stats.update();
+            this.stats.update();
         }
     }
 }

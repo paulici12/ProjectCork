@@ -23,16 +23,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="index.html" />
-    <Content Include="lib\gl-matrix\gl-matrix.js" />
-    <Content Include="lib\gl-matrix\gl-matrix\common.js" />
-    <Content Include="lib\gl-matrix\gl-matrix\mat2.js" />
-    <Content Include="lib\gl-matrix\gl-matrix\mat2d.js" />
-    <Content Include="lib\gl-matrix\gl-matrix\mat3.js" />
-    <Content Include="lib\gl-matrix\gl-matrix\mat4.js" />
-    <Content Include="lib\gl-matrix\gl-matrix\quat.js" />
-    <Content Include="lib\gl-matrix\gl-matrix\vec2.js" />
-    <Content Include="lib\gl-matrix\gl-matrix\vec3.js" />
-    <Content Include="lib\gl-matrix\gl-matrix\vec4.js" />
     <Content Include="lib\jquery\jquery-3.2.1.min.js" />
     <Content Include="lib\stats\stats.js" />
     <Content Include="style\default.css" />
@@ -44,7 +34,6 @@
     <Content Include="package.json" />
     <Content Include="tsconfig.json" />
     <Content Include="Scripts\typings\stats.js\tsconfig.json" />
-    <Content Include="Scripts\typings\gl-matrix\tsconfig.json" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
@@ -55,14 +44,11 @@
   <ItemGroup>
     <TypeScriptCompile Include="core\system.ts" />
     <TypeScriptCompile Include="cork.ts" />
-    <TypeScriptCompile Include="render\IRender.ts" />
     <TypeScriptCompile Include="render\Render.ts" />
-    <TypeScriptCompile Include="render\RenderExamples.ts" />
-    <TypeScriptCompile Include="Scripts\typings\gl-matrix\index.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\jquery\index.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\stats.js\index.d.ts" />
     <TypeScriptCompile Include="tools\PageScaler.ts" />
-    <TypeScriptCompile Include="tools\FPSCounter.ts" />
+    <TypeScriptCompile Include="tools\FpsCounter.ts" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>

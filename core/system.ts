@@ -1,61 +1,47 @@
 ﻿
-var System: CorkSystem = null;
-
 class CorkSystem
 {
-    private _fpsCounter: FPSCounter = null;
-    private _pageScaler: PageScaler = null;
-    private _render: IRender = null;
-
-    private _renderExamples: RenderExamples = null;
+    private readonly fpsCounter: FpsCounter;
+    private readonly pageScaler: PageScaler;
+    private readonly render: Render;
 
     constructor()
     {
-        this._fpsCounter = new FPSCounter("#stats");
-        this._pageScaler = new PageScaler("#cork_canvas");
-        this._render = new Render("cork_canvas");
-
-        this._renderExamples = new RenderExamples();
-
-
-        //test
-        this.test();
+        this.fpsCounter = new FpsCounter("#stats");
+        this.pageScaler = new PageScaler("#cork_canvas");
+        this.render = new Render("cork_canvas");
     }
 
     init()
     {
-        
+        renderLoop();
+
+        this.render.clear(0.0, 0.0, 0.0, 1);
     }
 
-    test()
+    getFpsCounter(): FpsCounter
     {
-        this._render.clear(0.0, 0.0, 0.0, 1);
-        this._renderExamples.test(this._render.gl());
+        return this.fpsCounter;
     }
 
-    public fpsCounter(): FPSCounter
+    getPageScaler(): PageScaler
     {
-        return this._fpsCounter;
+        return this.pageScaler;
     }
 
-    public pageScaler(): PageScaler
+    getRender(): Render
     {
-        return this._pageScaler;
-    }
-
-    public render(): IRender
-    {
-        return this._render;
+        return this.render;
     }
 }
 
 function renderLoop()
 {
-    let fps: number = 60;
-    let now: number = 0;
-    let then: number = Date.now();
-    let interval: number = 1000 / fps;
-    let delta: number = 0;
+    const fps = 60;
+    let now = 0;
+    let then = Date.now();
+    const interval = 1000 / fps;
+    let delta = 0;
 
     function draw()
     {
@@ -83,8 +69,8 @@ function renderLoop()
             then = now - (delta % interval);
 
             // ... Code for Drawing the Frame ...
-            System.render().update(delta, then);
-            System.fpsCounter().update();
+            system.getRender().update(delta, then);
+            system.getFpsCounter().update();
         }
     }
 

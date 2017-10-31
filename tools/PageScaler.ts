@@ -1,11 +1,11 @@
 ﻿
 class PageScaler
 {
-    private _sellector: string = "";
+    private readonly sellector: string = "";
 
     constructor(selector: string)
     {
-        this._sellector = selector;
+        this.sellector = selector;
 
         this.update();
         window.addEventListener("resize", () => { this.update(); });
@@ -13,9 +13,9 @@ class PageScaler
 
     private update()
     {
-        let _value: number = (window.innerWidth > window.innerHeight) ? window.innerHeight : window.innerWidth;
+        const value = (window.innerWidth > window.innerHeight) ? window.innerHeight : window.innerWidth;
 
-        $(this._sellector).width(_value);
-        $(this._sellector).height(_value);
+        $(this.sellector).width(value);
+        $(this.sellector).height(value);
     }
 }
